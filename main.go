@@ -1,7 +1,15 @@
 package main
 
-import "github.com/bernielomax/dagger-hello/internal/client"
+import (
+	"fmt"
+
+	"github.com/bernielomax/dagger-hello/internal/client"
+)
 
 func main() {
-	client.Get("https://google.com")
+	out, err := client.Get("https://icanhazip.com")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(out)
 }
